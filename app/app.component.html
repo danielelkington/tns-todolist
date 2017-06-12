@@ -1,0 +1,12 @@
+<ActionBar title="Todo List">
+    <ActionItem (tap)="addItem()"
+    ios.systemIcon="4"
+    ios.position="right"
+    android.systemIcon="ic_menu_add"
+    android.position="actionBar"></ActionItem>
+</ActionBar>
+<ListView [items]="listItems">
+    <ng-template let-item="item">
+        <CheckBox [text]="item.description" [checked]="item.complete"></CheckBox>        
+    </ng-template>
+</ListView>
