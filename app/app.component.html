@@ -7,6 +7,6 @@
 </ActionBar>
 <ListView [items]="listItems">
     <ng-template let-item="item">
-        <CheckBox [text]="item.description" [checked]="item.complete"></CheckBox>        
+        <CheckBox [text]="item.description" [checked]="item.complete" (checkedChange)="itemCheckChanged(item)"></CheckBox>
     </ng-template>
 </ListView>
