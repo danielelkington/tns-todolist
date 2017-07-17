@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, NgZone } from "@angular/core";
 import { ListItem } from "./listItem";
 import dialogs = require("ui/dialogs");
 var Sqlite = require("nativescript-sqlite");
@@ -28,15 +28,16 @@ export class AppComponent {
         });
     }
 
-    constructor(){
+    constructor(private zone: NgZone){
         this.initialiseDatabaseIfNotExists();
     }
 
     private fetchItems(){
         this.listItems = [];
         var listItems = this.listItems;
-        var itemCheckChanged = this.itemCheckChanged;
-        this.database.each("SELECT Id, Description, Complete FROM ListItem", function (err, row) {
+        this.database.each("SELECT Id, Description, Complete FROM ListItem WHERE Complete = ?",
+        [0],
+        function (err, row) {
             if (err){
                 console.log("SELECT ERROR", err);
                 return;
@@ -65,14 +66,12 @@ export class AppComponent {
         });
     }
 
-    itemCheckChanged(item: ListItem){
-        if (!item.hadFirstUpdate){
-            item.hadFirstUpdate = true;
-            return;
-        }
-        item.complete = !item.complete;
-        this.database.execSQL("UPDATE ListItem SET Complete = ?, ModifiedUTC = ? WHERE Id = ?", 
-            [item.complete ? 1 : 0, (new Date()).getUTCMilliseconds(), item.id])
+    complete(item:ListItem){
+        item.complete = false;
+        this.database.execSQL("UPDATE ListItem SET Complete = 1, ModifiedUTC = ? WHERE Id = ?", 
+            [(new Date()).getUTCMilliseconds(), item.id])
             .then(id => {},error => {console.log("UPDATE DB ERROR", error)});
+        //Run in a zone to ensure the change event gets triggered
+        this.zone.run(() => {this.listItems.splice(this.listItems.indexOf(item), 1);});
     }
 }

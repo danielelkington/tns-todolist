@@ -1,6 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
-import { TNSCheckBoxModule } from "nativescript-checkbox/angular";
 import { AppComponent } from "./app.component";
 
 
@@ -9,8 +8,7 @@ import { AppComponent } from "./app.component";
         AppComponent
     ],
     imports: [
-        NativeScriptModule,
-        TNSCheckBoxModule
+        NativeScriptModule
     ],
     declarations: [
         AppComponent

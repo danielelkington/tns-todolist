@@ -7,6 +7,9 @@
 </ActionBar>
 <ListView [items]="listItems">
     <ng-template let-item="item">
-        <CheckBox [text]="item.description" [checked]="item.complete" (checkedChange)="itemCheckChanged(item)"></CheckBox>
+        <GridLayout columns="*,10" height="40">
+            <Label col="0" [text]="item.description"></Label>
+            <Button col="1" text="X" (tap)="complete(item)"></Button>
+        </GridLayout>
     </ng-template>
 </ListView>
