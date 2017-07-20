@@ -1,0 +1,17 @@
+﻿<Properties StartupConfiguration="{D6ECC029-2154-41DD-980B-4D1F487E875C}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Web.config">
+    <Files>
+      <File FileName="App_Start/WebApiConfig.cs" Line="7" Column="24" />
+      <File FileName="ListItemController.cs" Line="9" Column="51" />
+      <File FileName="ListItem.cs" Line="12" Column="1" />
+      <File FileName="Web.config" Line="21" Column="7" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.backend PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
