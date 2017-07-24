@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Linq;
 
 namespace backend.Tests
 {
@@ -9,6 +10,8 @@ namespace backend.Tests
         [Test]
         public void TestCase()
         {
+            var controller = new ListItemController();
+            controller.Post(1, Enumerable.Empty<ListItem>());
         }
     }
 }

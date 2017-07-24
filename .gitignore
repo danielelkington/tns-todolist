@@ -5,3 +5,12 @@ lib/
 node_modules/
 platforms/
 .vscode/
+backend/Backup
+backend/Backup1
+backend/.vs/
+backend/bin/
+backend/obj/
+backend/packages/
+backend/backend.Tests/bin
+backend/backend.Tests/obj
+

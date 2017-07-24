@@ -5,7 +5,7 @@ namespace backend
     {
         public string Id { get; set; }
         public string Description { get; set; }
-        public string Complete { get; set; }
+        public bool Complete { get; set; }
         public int ModifiedUTC { get; set; }
     }
 }

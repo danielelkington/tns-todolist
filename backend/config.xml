@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<config>
+  <DataSource>DATASOURCEHERE</DataSource>
+  <UserId>DATABASE USERID HERE</UserId>
+  <Password>DATABASE PASSWORD HERE</Password>
+</config>
