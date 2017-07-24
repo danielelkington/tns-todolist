@@ -1,4 +1,9 @@
 <ActionBar title="Todo List">
+    <ActionItem (tap)="sync()"
+    ios.systemIcon="13"
+    ios.position="right"
+    android.systemIcon="ic_menu_refresh"
+    android.position="actionBar"></ActionItem>
     <ActionItem (tap)="addItem()"
     ios.systemIcon="4"
     ios.position="right"
@@ -7,7 +12,7 @@
 </ActionBar>
 <ListView [items]="listItems">
     <ng-template let-item="item">
-        <GridLayout columns="*,10" height="40">
+        <GridLayout columns="*,auto" height="40">
             <Label col="0" [text]="item.description"></Label>
             <Button col="1" text="X" (tap)="complete(item)"></Button>
         </GridLayout>
